@@ -11,16 +11,22 @@ body {
     background-size: 100vw 100vh;
 }
 
+.max-w {
+    max-width: 1800px;
+    margin: 50px auto;
+    padding: 0 30px;
+}
+
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 40px 60px;
 }
 
 nav h1 {
     margin-top: 25px;
     font-size: 35px;
+    margin-right: 20px;
 }
 
 .list {
@@ -49,13 +55,12 @@ nav h1 {
 
 .upper-section {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    padding: 20px 100px;
+    grid-template-columns: 1.5fr 1fr;
 }
 
 .upper-section h1 {
     font-size: 100px;
-    margin-top: 75px;
+    margin-top: 25px;
 }
 
 .card {
@@ -80,36 +85,46 @@ nav h1 {
     padding: 25px;
 }
 
-.upper-card, .line-one, .upper-right .circle {
+.upper-card {
     margin-left: auto;
 }
 
+.upper-right-cont .shapes{
+    position: absolute;
+    right: 100px;
+}
+.upper-right-cont {
+    position: relative;
+}
 .line-one {
     background-color: #FFFFFF;
     width: 2px;
     height: 75px;
-    margin-right: 100px;
+    position: absolute;
+    left: 10px;
+
 }
 
 .circle {
     background-color: #FFFFFF;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    position: absolute;
 }
 
 .upper-right {
-    padding-right: 50px;
+    margin-right: 50px;
 }
 
 .upper-right .circle {
-    margin-right: 91px;
+    top: 75px;
 }
 
 .lower-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 20px 100px;
+    grid-template-columns: 1fr 1.25fr;
+    margin-top: 50px;
 }
 
 .btn {
@@ -129,17 +144,61 @@ nav h1 {
 .lower-right {
     display: flex;
     flex-direction: row;
-    padding: 30px 0 0 70px;
+}
+
+.lower-right .shapes {
+    position: relative;
+}
+
+.lower-right .circle {
+    top: 65px;
+    right: -95px;
 }
 
 .line-two {
     background-color: #FFFFFF;
+    position: absolute;
     height: 2px;
     width: 75px;
-    margin-top: 75px;
+    top: 75px;
 }
 
-.lower-right .circle {
-    margin-right: auto;
-    margin-top: 66px;
+
+@media only screen and (max-width: 1280px) {
+    .list-item {
+        display: none;
+    }
+    .upper-section, .lower-section {
+        grid-template-columns: 1fr;
+    }
+    .upper-section h1 {
+        font-size: 70px;
+        text-align: center;
+    }
+    .upper-right,.lower-right {
+        margin: 25px auto;
+    }
+    .lower-section {
+        margin-top: 0;
+    }
+}
+
+
+@media only screen and (max-width: 580px) {
+    .upper-section h1 {
+        font-size: 50px;
+    }
+
+    .btn {
+        font-size: 14px;
+        font-weight: 600;
+        width: fit-content;
+        background: transparent;
+        padding: 10px 20px;
+        border: 3px solid #FFFFFF;
+        border-radius: 50px;
+    }
+    .max-w {
+        margin: 20px auto 0;
+    }
 }
